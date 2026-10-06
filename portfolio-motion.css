@@ -1,0 +1,375 @@
+/* DCode scroll-linked motion layer — 2026-10-06
+   Kept separate from the base visual system so motion can be tuned/reverted independently. */
+
+:root{
+  --scroll-progress:0;
+  --hero-progress:0;
+  --intro-progress:0;
+  --contact-progress:0;
+}
+
+.motion-progress{
+  position:fixed;
+  z-index:140;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  pointer-events:none;
+  transform-origin:left center;
+  transform:scaleX(var(--scroll-progress));
+  background:var(--accent);
+  mix-blend-mode:difference;
+}
+
+body.motion-ready .site-nav{
+  will-change:transform,opacity;
+  transition:opacity .25s ease;
+}
+body.motion-ready .nav-pill{
+  will-change:transform,background-color,box-shadow;
+  transform:scale(calc(1 - (var(--nav-progress,0) * .045)));
+  box-shadow:0 calc(15px - (var(--nav-progress,0) * 7px)) 50px rgba(0,0,0,calc(.18 - (var(--nav-progress,0) * .06)));
+}
+
+.hero{
+  overflow:clip;
+  isolation:isolate;
+}
+.hero-main,
+.hero-side > div:first-child,
+.system-card{
+  will-change:transform,opacity;
+}
+body.motion-ready .hero-main{
+  transform:
+    translate3d(0,calc(var(--hero-progress) * -92px),0)
+    scale(calc(1 - (var(--hero-progress) * .045)));
+  opacity:calc(1 - (var(--hero-progress) * .72));
+  transform-origin:left bottom;
+}
+body.motion-ready .hero-side > div:first-child{
+  transform:translate3d(0,calc(var(--hero-progress) * -44px),0);
+  opacity:calc(1 - (var(--hero-progress) * .55));
+}
+body.motion-ready .system-card{
+  transform:
+    translate3d(0,calc(var(--hero-progress) * -66px),0)
+    rotate(calc((var(--hero-progress) * -2.3deg) + var(--card-tilt-y,0deg)))
+    rotateY(var(--card-tilt-x,0deg))
+    rotateX(var(--card-tilt-z,0deg));
+  transform-style:preserve-3d;
+  transform-origin:center center;
+}
+body.motion-ready .system-core{
+  transform:
+    translate(-50%,-50%)
+    translate3d(calc(var(--hero-progress) * 8px),calc(var(--hero-progress) * -14px),35px)
+    scale(calc(1 + (var(--hero-progress) * .05)));
+}
+body.motion-ready .orbit-node.n1{transform:translate3d(calc(var(--hero-progress) * -25px),calc(var(--hero-progress) * -18px),22px)}
+body.motion-ready .orbit-node.n2{transform:translate3d(calc(var(--hero-progress) * 28px),calc(var(--hero-progress) * -8px),35px)}
+body.motion-ready .orbit-node.n3{transform:translate3d(calc(var(--hero-progress) * -18px),calc(var(--hero-progress) * 16px),18px)}
+body.motion-ready .orbit-node.n4{transform:translate3d(calc(var(--hero-progress) * 34px),calc(var(--hero-progress) * 22px),28px)}
+
+.motion-mask{
+  display:block;
+  overflow:hidden;
+  padding-bottom:.08em;
+  margin-bottom:-.08em;
+}
+.motion-mask > span{
+  display:block;
+  will-change:transform,opacity;
+  transform:translate3d(0,112%,0);
+  opacity:.02;
+}
+body.motion-loaded .motion-mask > span{
+  transform:translate3d(0,0,0);
+  opacity:1;
+  transition:
+    transform 1s cubic-bezier(.16,1,.3,1),
+    opacity .55s ease;
+}
+body.motion-loaded .motion-mask:nth-child(2) > span{transition-delay:.08s}
+body.motion-loaded .motion-mask:nth-child(3) > span{transition-delay:.16s}
+body.motion-loaded .motion-mask:nth-child(4) > span{transition-delay:.24s}
+
+.hero-kicker,
+.hero-note,
+.hero-side > div:first-child{
+  opacity:0;
+  transform:translateY(18px);
+}
+body.motion-loaded .hero-kicker,
+body.motion-loaded .hero-note,
+body.motion-loaded .hero-side > div:first-child{
+  opacity:1;
+  transform:none;
+  transition:opacity .7s ease,transform .9s cubic-bezier(.16,1,.3,1);
+}
+body.motion-loaded .hero-kicker{transition-delay:.2s}
+body.motion-loaded .hero-side > div:first-child{transition-delay:.42s}
+body.motion-loaded .hero-note{transition-delay:.56s}
+.system-card{
+  opacity:0;
+  clip-path:inset(12% 0 0 0 round var(--radius-lg));
+}
+body.motion-loaded .system-card{
+  opacity:1;
+  clip-path:inset(0 0 0 0 round var(--radius-lg));
+  transition:opacity .8s ease,clip-path 1.15s cubic-bezier(.16,1,.3,1);
+  transition-delay:.32s;
+}
+
+/* Scroll-driven intro statement */
+.intro-copy{
+  perspective:1000px;
+}
+body.motion-ready .intro-copy{
+  transform:
+    translate3d(0,calc((1 - var(--intro-progress)) * 64px),0)
+    scale(calc(.95 + (var(--intro-progress) * .05)));
+  opacity:calc(.16 + (var(--intro-progress) * .84));
+  transform-origin:left bottom;
+  will-change:transform,opacity;
+}
+body.motion-ready .intro-copy .muted{
+  color:color-mix(in srgb,#a3a199 calc(100% - (var(--intro-progress) * 38%)),#62615b);
+}
+.intro-meta article{
+  will-change:transform,opacity;
+}
+body.motion-ready .intro-meta article:nth-child(1){
+  transform:translate3d(0,calc((1 - var(--intro-progress)) * 52px),0);
+}
+body.motion-ready .intro-meta article:nth-child(2){
+  transform:translate3d(0,calc((1 - var(--intro-progress)) * 82px),0);
+}
+body.motion-ready .intro-meta article:nth-child(3){
+  transform:translate3d(0,calc((1 - var(--intro-progress)) * 112px),0);
+}
+
+/* Section title wipe */
+.motion-title{
+  clip-path:inset(0 0 calc((1 - var(--title-progress,0)) * 100%) 0);
+  transform:translate3d(0,calc((1 - var(--title-progress,0)) * 52px),0);
+  opacity:calc(.12 + (var(--title-progress,0) * .88));
+  will-change:clip-path,transform,opacity;
+}
+
+/* Framer-like project storytelling */
+@media(min-width:1051px){
+  .cards{gap:9vh}
+  .project{
+    min-height:118vh;
+    overflow:visible;
+    align-items:start;
+    isolation:isolate;
+    background:transparent;
+    border-color:transparent;
+  }
+  .project::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    border:1px solid var(--line-soft);
+    border-radius:var(--radius-lg);
+    background:var(--paper);
+    transform:
+      translate3d(0,calc((1 - var(--card-focus,0)) * 36px),0)
+      scale(calc(.965 + (var(--card-focus,0) * .035)));
+    opacity:calc(.56 + (var(--card-focus,0) * .44));
+    will-change:transform,opacity;
+  }
+  .projectcopy{
+    position:sticky;
+    top:112px;
+    min-height:calc(100vh - 145px);
+    align-self:start;
+    justify-content:center;
+    padding-top:80px;
+    padding-bottom:80px;
+    transform:
+      translate3d(0,calc((.5 - var(--card-focus,0)) * 34px),0);
+    opacity:calc(.36 + (var(--card-focus,0) * .64));
+    will-change:transform,opacity;
+  }
+  .projectvisual{
+    position:sticky;
+    top:86px;
+    height:calc(100vh - 108px);
+    min-height:0;
+    align-self:start;
+    border-radius:var(--radius-lg);
+    transform:
+      translate3d(0,calc((.5 - var(--card-focus,0)) * 42px),0)
+      scale(calc(.89 + (var(--card-focus,0) * .11)));
+    opacity:calc(.45 + (var(--card-focus,0) * .55));
+    will-change:transform,opacity;
+  }
+  .project:nth-child(odd) .projectvisual{
+    transform:
+      translate3d(0,calc((.5 - var(--card-focus,0)) * 42px),0)
+      rotate(calc((1 - var(--card-focus,0)) * -2.4deg))
+      scale(calc(.89 + (var(--card-focus,0) * .11)));
+  }
+  .project:nth-child(even) .projectvisual{
+    transform:
+      translate3d(0,calc((.5 - var(--card-focus,0)) * 42px),0)
+      rotate(calc((1 - var(--card-focus,0)) * 2.4deg))
+      scale(calc(.89 + (var(--card-focus,0) * .11)));
+  }
+  .project .preview-frame{
+    height:min(74vh,760px);
+    aspect-ratio:auto;
+    transform:
+      translate3d(0,calc((1 - var(--card-focus,0)) * 52px),0)
+      scale(calc(.91 + (var(--card-focus,0) * .09)));
+    box-shadow:0 calc(18px + (var(--card-focus,0) * 24px)) calc(42px + (var(--card-focus,0) * 40px)) rgba(0,0,0,calc(.12 + (var(--card-focus,0) * .11)));
+    will-change:transform,box-shadow;
+  }
+  .project:hover .preview-frame{transform:translate3d(0,0,0) scale(1)}
+}
+.projectcopy > *{
+  will-change:transform,opacity;
+}
+body.motion-ready .projectcopy > *{
+  transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 28px),0);
+  opacity:calc(.18 + (var(--copy-progress,0) * .82));
+}
+body.motion-ready .projectcopy > *:nth-child(2){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 36px),0)}
+body.motion-ready .projectcopy > *:nth-child(3){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 44px),0)}
+body.motion-ready .projectcopy > *:nth-child(4){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 52px),0)}
+body.motion-ready .projectcopy > *:nth-child(5){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 60px),0)}
+body.motion-ready .projectcopy > *:nth-child(6){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 68px),0)}
+body.motion-ready .projectcopy > *:nth-child(7){transform:translate3d(0,calc((1 - var(--copy-progress,0)) * 76px),0)}
+
+/* DEE block shifts like a pinned poster */
+.rnd{
+  will-change:transform,clip-path;
+}
+body.motion-ready .rnd{
+  transform:
+    translate3d(0,calc((1 - var(--rnd-progress,0)) * 76px),0)
+    scale(calc(.94 + (var(--rnd-progress,0) * .06)));
+  clip-path:inset(calc((1 - var(--rnd-progress,0)) * 6%) 0 0 0 round var(--radius-lg));
+}
+body.motion-ready .rnd::before{
+  transform:translate3d(calc((1 - var(--rnd-progress,0)) * 90px),calc((1 - var(--rnd-progress,0)) * 24px),0);
+}
+
+/* Capability rows sweep from alternating directions */
+body.motion-ready .cap-row{
+  --row-dir:1;
+  transform:translate3d(calc((1 - var(--row-progress,0)) * 44px * var(--row-dir)),0,0);
+  opacity:calc(.15 + (var(--row-progress,0) * .85));
+}
+body.motion-ready .cap-row:nth-child(even){--row-dir:-1}
+
+/* Stack panel grows into place; columns cascade */
+body.motion-ready .stack-panel{
+  transform:
+    translate3d(0,calc((1 - var(--stack-progress,0)) * 72px),0)
+    scale(calc(.94 + (var(--stack-progress,0) * .06)));
+  border-radius:calc(var(--radius-lg) + ((1 - var(--stack-progress,0)) * 14px));
+  will-change:transform;
+}
+body.motion-ready .stack-col{
+  transform:translate3d(0,calc((1 - var(--stack-progress,0)) * var(--stack-shift,60px)),0);
+  opacity:calc(.1 + (var(--stack-progress,0) * .9));
+  will-change:transform,opacity;
+}
+.stack-col:nth-child(1){--stack-shift:42px}.stack-col:nth-child(2){--stack-shift:68px}.stack-col:nth-child(3){--stack-shift:94px}.stack-col:nth-child(4){--stack-shift:120px}.stack-col:nth-child(5){--stack-shift:146px}
+
+/* Contact section becomes a scroll destination rather than a static panel */
+body.motion-ready .contact-panel{
+  transform:
+    translate3d(0,calc((1 - var(--contact-progress)) * 95px),0)
+    scale(calc(.92 + (var(--contact-progress) * .08)));
+  border-radius:calc(var(--radius-lg) + ((1 - var(--contact-progress)) * 24px));
+  clip-path:inset(calc((1 - var(--contact-progress)) * 7%) 0 0 0 round var(--radius-lg));
+  will-change:transform,clip-path,border-radius;
+}
+body.motion-ready .contact-panel h2{
+  transform:
+    translate3d(calc((1 - var(--contact-progress)) * -80px),0,0)
+    scale(calc(.94 + (var(--contact-progress) * .06)));
+  opacity:calc(.12 + (var(--contact-progress) * .88));
+  transform-origin:left center;
+  will-change:transform,opacity;
+}
+body.motion-ready .contact-panel::after{
+  transform:
+    translate3d(calc((1 - var(--contact-progress)) * 70px),calc((1 - var(--contact-progress)) * 80px),0)
+    rotate(calc((1 - var(--contact-progress)) * 8deg));
+}
+
+/* Motion-aware nav hide/show on scroll direction */
+.site-nav.nav-hidden{
+  opacity:0;
+  transform:translate(-50%,-18px);
+}
+
+/* Base reveal remains a fallback; scroll engine owns the enhanced version. */
+body.motion-ready .reveal{
+  transition:none;
+}
+body.motion-ready .reveal.in{
+  transform:none;
+  opacity:1;
+}
+
+/* Keep motion elegant instead of jumpy on tablets/mobile. */
+@media(max-width:1050px){
+  body.motion-ready .hero-main{
+    transform:translate3d(0,calc(var(--hero-progress) * -48px),0);
+  }
+  body.motion-ready .system-card{
+    transform:translate3d(0,calc(var(--hero-progress) * -30px),0) rotate(calc(var(--hero-progress) * -1deg));
+  }
+  .project{--card-focus:1!important;--copy-progress:1!important}
+  body.motion-ready .projectvisual,
+  body.motion-ready .projectcopy{transform:none;opacity:1}
+}
+
+@media(max-width:760px){
+  .motion-progress{height:2px}
+  body.motion-ready .nav-pill{transform:none}
+  body.motion-ready .intro-copy{
+    transform:translate3d(0,calc((1 - var(--intro-progress)) * 34px),0);
+  }
+  body.motion-ready .contact-panel h2{
+    transform:translate3d(0,calc((1 - var(--contact-progress)) * 45px),0);
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .motion-progress{display:none}
+  body.motion-ready *,
+  body.motion-loaded *{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+    scroll-behavior:auto!important;
+  }
+  body.motion-ready .hero-main,
+  body.motion-ready .hero-side > div:first-child,
+  body.motion-ready .system-card,
+  body.motion-ready .intro-copy,
+  body.motion-ready .projectcopy,
+  body.motion-ready .projectvisual,
+  body.motion-ready .project .preview-frame,
+  body.motion-ready .rnd,
+  body.motion-ready .stack-panel,
+  body.motion-ready .contact-panel,
+  body.motion-ready .contact-panel h2,
+  body.motion-ready .cap-row,
+  body.motion-ready .stack-col,
+  .motion-title{
+    transform:none!important;
+    opacity:1!important;
+    clip-path:none!important;
+  }
+}
