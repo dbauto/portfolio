@@ -151,11 +151,4 @@
     }, {passive:true});
   }
 
-  const parallaxCard = document.querySelector('.system-card');
-  if (parallaxCard && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    addEventListener('scroll', () => {
-      const y = Math.min(22, scrollY * .025);
-      parallaxCard.style.transform = `translateY(${y}px)`;
-    }, {passive:true});
-  }
 })();
