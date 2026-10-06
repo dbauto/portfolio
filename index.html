@@ -3,160 +3,180 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DCode — Systems Architecture, Automation & Integration</title>
-<meta name="description" content="Danica Marie Boton architects connected business systems across CRM, n8n automation, APIs, AI, databases, and custom applications.">
-<link rel="stylesheet" href="styles.css?v=restore-20260903">
-<link rel="stylesheet" href="theme-neumorphism.css?v=20260904-laptop-revert1">
+<title>DCode — AI Automation & Systems Engineering</title>
+<meta name="description" content="Danica Marie Boton designs connected business systems across AI automation, CRM, n8n, APIs, data, and custom applications.">
+<meta name="theme-color" content="#f1efe9">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="portfolio-framer.css?v=20261006">
 </head>
-<body class="portfolio-theme">
-<nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><span class="brandmark">DC</span><span>DCode<small>Danica Marie Boton</small></span></a><div class="navlinks"><a href="#approach">Approach</a><a href="#work">Selected work</a><a href="#capabilities">Capabilities</a><a href="#contact">Contact</a></div></div></nav>
-<main>
-<header class="wrap hero">
-  <div class="hero-copy">
-    <span class="eyebrow">Systems architect · automation &amp; integration engineer</span>
-    <h1>I architect the <em>operating layer</em> between your tools.</h1>
-    <p>I design and build connected business systems across CRM, operations, AI, APIs, databases, and custom applications. I use the right implementation layer for the requirement—from platform-native automation to n8n orchestration and reviewed JavaScript or Python.</p>
-    <div class="hero-roleline"><span>Primary orchestration: n8n</span><span>Secondary: Make</span><span>Custom logic: JS + Python</span></div>
-    <div class="actions"><a class="btn primary" href="#work">Explore the systems</a><a class="btn" href="demo.html?id=monday">View n8n workflow ↗</a></div>
+<body>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<nav class="site-nav" aria-label="Primary navigation">
+  <div class="nav-pill">
+    <a class="brand" href="#top"><span class="brand-mark">DC</span><span>DCode</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#stack">Stack</a>
+      <a class="nav-cta" href="#contact"><i></i> Let's talk</a>
+    </div>
   </div>
-  <div class="data-architecture" aria-label="Connected data architecture showing business modules, integration, automation, and AI">
-    <div class="data-architecture-head"><div><span>Connected system architecture</span><strong>Data modules + orchestration</strong></div><span class="architecture-state"><i></i> observable</span></div>
-    <div class="data-architecture-canvas">
-      <div class="data-map-stage">
-      <svg viewBox="0 0 680 420" aria-hidden="true">
-        <path id="systemFlow1" d="M144 108 C183 108 175 164 218 164"/><path id="systemFlow2" d="M144 198 C182 198 181 188 218 188"/><path id="systemFlow3" d="M144 288 C184 288 176 214 218 214"/>
-        <path id="systemFlow4" d="M352 155 C390 155 389 102 430 102"/><path id="systemFlow5" d="M352 188 C391 188 389 190 430 190"/><path id="systemFlow6" d="M352 220 C390 220 389 278 430 278"/>
-        <path id="systemFlow7" class="automation-line" d="M285 252 C285 294 285 297 285 328"/><path id="systemFlow8" class="automation-line" d="M378 363 C416 363 418 363 450 363"/>
-        <g class="flow-dots">
-          <circle r="3"><animateMotion dur="5.6s" repeatCount="indefinite"><mpath href="#systemFlow1"/></animateMotion></circle>
-          <circle r="3"><animateMotion dur="6.4s" begin="-1.1s" repeatCount="indefinite"><mpath href="#systemFlow3"/></animateMotion></circle>
-          <circle r="3"><animateMotion dur="5.9s" begin="-1.8s" repeatCount="indefinite"><mpath href="#systemFlow4"/></animateMotion></circle>
-          <circle r="3"><animateMotion dur="6.8s" begin="-2.4s" repeatCount="indefinite"><mpath href="#systemFlow6"/></animateMotion></circle>
-          <circle class="flow-dot-blue" r="3"><animateMotion dur="4.4s" repeatCount="indefinite"><mpath href="#systemFlow7"/></animateMotion></circle>
-          <circle class="flow-dot-blue" r="3"><animateMotion dur="4.9s" begin="-1.5s" repeatCount="indefinite"><mpath href="#systemFlow8"/></animateMotion></circle>
-        </g>
-      </svg>
-      <div class="data-column-label input-label">Data sources</div><div class="data-column-label output-label">Operating surfaces</div>
-      <article class="data-module source" style="left:22px;top:72px"><span>01</span><div><b>CRM events</b><small>records · stages · activities</small></div></article>
-      <article class="data-module source" style="left:22px;top:162px"><span>02</span><div><b>Forms &amp; files</b><small>requests · documents · OCR</small></div></article>
-      <article class="data-module source" style="left:22px;top:252px"><span>03</span><div><b>External APIs</b><small>webhooks · OAuth · JSON</small></div></article>
-      <article class="data-core" style="left:218px;top:126px"><span>System of record</span><h3>Core data model</h3><div><i>People</i><i>Work</i><i>History</i><i>Rules</i></div><small>relationships · validation · state</small></article>
-      <article class="data-module surface" style="left:430px;top:66px"><span>UI</span><div><b>Business platform</b><small>Zoho · Monday · Sheets</small></div></article>
-      <article class="data-module surface" style="left:430px;top:154px"><span>APP</span><div><b>Custom application</b><small>portal · dashboard · console</small></div></article>
-      <article class="data-module surface" style="left:430px;top:242px"><span>BI</span><div><b>Reports &amp; actions</b><small>analytics · alerts · decisions</small></div></article>
-      <article class="data-layer orchestration" style="left:196px;top:328px"><span>FLOW</span><div><b>Automation &amp; integration</b><small>native rules · n8n · Make · code</small></div></article>
-      <article class="data-layer intelligence" style="left:450px;top:328px"><span>AI</span><div><b>Intelligence layer</b><small>extract · classify · validate · assist</small></div></article>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-main">
+        <div class="hero-kicker">
+          <span class="eyebrow">AI automation · systems engineering</span>
+          <span class="hero-availability"><i></i> Philippines · Remote</span>
+        </div>
+        <h1>Building the <span class="accent-word">systems</span> behind modern operations.</h1>
+        <div class="hero-note">Automation is the implementation layer. Architecture comes first.</div>
+      </div>
+
+      <div class="hero-side">
+        <div>
+          <p class="hero-intro">I’m <strong>Danica Marie Boton</strong>. I connect CRM, operations, AI, APIs, databases, and custom interfaces into reliable systems people can actually run.</p>
+          <div class="hero-actions">
+            <a class="btn dark" href="#work">Explore selected work <span class="arr">↓</span></a>
+            <a class="btn" href="mailto:boton.danicamarie@gmail.com">Email me <span class="arr">↗</span></a>
+          </div>
+        </div>
+
+        <div class="system-card" aria-label="Connected systems architecture illustration">
+          <div class="system-top"><span>Connected operating layer</span><strong>Live architecture</strong></div>
+          <div class="system-core"><b>Orchestration</b><small>n8n + code</small></div>
+          <div class="orbit-node n1"><b>CRM + ATS</b><small>Zoho · records · state</small></div>
+          <div class="orbit-node n2"><b>AI + Agents</b><small>extract · reason · assist</small></div>
+          <div class="orbit-node n3"><b>Data layer</b><small>Postgres · Supabase</small></div>
+          <div class="orbit-node n4"><b>Operations UI</b><small>Monday · portals · apps</small></div>
+          <span class="pulse-dot p1"></span><span class="pulse-dot p2"></span>
+          <div class="system-foot"><span>Idempotency · retries · audit</span><span>API / Webhooks / OAuth</span></div>
+        </div>
       </div>
     </div>
-    <div class="data-architecture-foot"><span>Designed around data ownership, clear boundaries, and recoverable handoffs.</span><div><i></i> audit <i></i> retry <i></i> monitoring</div></div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-set">
+        <span>n8n</span><span>Zoho CRM</span><span>AI Agents</span><span>Monday.com</span><span>JavaScript</span><span>Python</span><span>Supabase</span><span>REST APIs</span><span>OAuth2</span>
+      </div>
+      <div class="marquee-set">
+        <span>n8n</span><span>Zoho CRM</span><span>AI Agents</span><span>Monday.com</span><span>JavaScript</span><span>Python</span><span>Supabase</span><span>REST APIs</span><span>OAuth2</span>
+      </div>
+    </div>
   </div>
-</header>
-<section class="proofrail" aria-label="Selected portfolio evidence">
-  <div class="proof"><strong>120K+</strong><span>records in a controlled CRM migration program</span></div>
-  <div class="proof"><strong>30+</strong><span>workflow automations built across business operations</span></div>
-  <div class="proof"><strong>Native</strong><span>Zoho workflows, Deluge functions, reports, and platform configuration</span></div>
-  <div class="proof"><strong>AI-native</strong><span>faster architecture, coding, testing, and debugging with human review</span></div>
-</section>
-<section class="wrap section approach" id="approach">
-  <div class="sectionhead"><div><div class="kicker">Architecture before tools</div><h2>The system decides the implementation layer.</h2></div><p>I do not add middleware to every project. I build natively when the platform is the right home for the logic, use n8n when cross-system orchestration is needed, and extend with code when visual tools alone are not enough.</p></div>
-  <div class="decision-grid">
-    <article><span>01</span><h3>Platform-native</h3><p>Zoho workflow rules, Blueprints, approvals, schedules, reports, and Deluge functions keep CRM logic close to the system of record.</p><b>Zoho · Deluge · Apps Script</b></article>
-    <article class="featured"><span>02</span><h3>Cross-system orchestration</h3><p>n8n coordinates APIs, databases, business platforms, AI services, schedules, retries, and observable error paths.</p><b>n8n primary · Make secondary</b></article>
-    <article><span>03</span><h3>Custom engineering</h3><p>Reviewed and debugged JavaScript, Python, APIs, and lightweight applications cover requirements that no-code tools cannot.</p><b>JavaScript · Python · TypeScript</b></article>
-  </div>
-</section>
-<section class="wrap section" id="work">
-  <div class="sectionhead"><div><div class="kicker">Selected systems</div><h2>Read the case study.<br>Then open the system.</h2></div><p>Every project has two layers: a client-readable case study that explains the business problem and architecture, and an interactive reconstruction using synthetic data where the original client environment is no longer available.</p></div>
-  <div class="cards" id="projectCards"></div>
-</section>
-<section class="wrap section" id="capabilities">
-  <div class="sectionhead"><div><div class="kicker">Capabilities</div><h2>I work across the whole flow.</h2></div><p>The goal is not to automate one click. It is to make the handoffs, data, decisions, errors, and client experience work together.</p></div>
-  <div class="capability-list">
-    <div class="caprow"><h3>Systems architecture</h3><p>Requirements discovery, process mapping, system boundaries, data flow, platform selection, and solution design.</p><span>Business process → working system</span></div>
-    <div class="caprow"><h3>Automation &amp; orchestration</h3><p>Multi-step workflows, branching, schedules, retries, queues, reconciliation, and operational monitoring.</p><span>n8n primary / Make secondary</span></div>
-    <div class="caprow"><h3>Zoho-native engineering</h3><p>Modules, fields, Blueprints, workflow rules, schedules, custom Deluge functions, migrations, reports, and analytics.</p><span>Zoho CRM / Recruit / Deluge</span></div>
-    <div class="caprow"><h3>AI & agentic systems</h3><p>Structured LLM workflows, model routing, persistent agents, permissions, approvals, memory, and audit.</p><span>OpenAI / Anthropic / Gemini</span></div>
-    <div class="caprow"><h3>Custom client portals</h3><p>Secure external workspaces around internal systems, with role-based access, activity history, and controlled actions.</p><span>React / TypeScript / Cloudflare</span></div>
-    <div class="caprow"><h3>Integration engineering</h3><p>REST APIs, webhooks, OAuth2, data contracts, idempotency, external actions, and reliable write-back.</p><span>API / OAuth / JSON</span></div>
-    <div class="caprow"><h3>AI-assisted development</h3><p>JavaScript and Python for transformations, integrations, validation, and lightweight tools—reviewed, tested, and debugged before use.</p><span>Claude Code / Codex / JS / Python</span></div>
-    <div class="caprow"><h3>Data & OCR pipelines</h3><p>Extraction, normalization, deduplication, validation, databases, batch migration, and reconciliation.</p><span>PostgreSQL / Supabase / OCR</span></div>
-  </div>
-</section>
-<section class="wrap section" id="stack">
-  <div class="sectionhead"><div><div class="kicker">Technology</div><h2>A focused stack by system layer.</h2></div><p>I choose tools by their role in the architecture, not by logo count.</p></div>
-  <div class="stackgroups"><div class="stackgroup"><strong>External orchestration</strong><span>n8n — primary<br>Make — secondary<br>Zapier — supporting</span></div><div class="stackgroup"><strong>Platform-native</strong><span>Zoho + Deluge<br>Google Apps Script<br>Monday.com</span></div><div class="stackgroup"><strong>AI-native development</strong><span>Claude Code<br>Codex<br>OpenAI<br>Anthropic</span></div><div class="stackgroup"><strong>Code / data</strong><span>JavaScript<br>Python<br>TypeScript<br>PostgreSQL<br>Supabase</span></div><div class="stackgroup"><strong>Integration</strong><span>REST APIs<br>Webhooks<br>OAuth2<br>Cloudflare<br>JSON</span></div></div>
-</section>
-<section class="wrap section" id="contact"><div class="contact"><div class="kicker">Work with me</div><h2>Show me the broken handoff.</h2><p>I can map the process, identify where data or decisions are getting stuck, design the architecture, and build the automation or client-facing layer around it.</p><div class="actions"><a class="btn primary" href="mailto:boton.danicamarie@gmail.com">boton.danicamarie@gmail.com</a></div></div></section>
+
+  <section class="intro-section">
+    <div class="shell intro-grid">
+      <div><span class="section-label">01 / Point of view</span></div>
+      <div class="intro-copy reveal">
+        <p>I don’t automate isolated clicks. I design the <span class="muted">data, decisions, handoffs, exceptions, and recovery paths</span> around the whole operation.</p>
+      </div>
+      <div class="intro-meta">
+        <article class="reveal"><strong>30+</strong><span>workflow automations across business operations</span></article>
+        <article class="reveal"><strong>120K+</strong><span>records in a controlled CRM migration program</span></article>
+        <article class="reveal"><strong>24/7</strong><span>AI-assisted processing patterns with human review</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="work-section" id="work">
+    <div class="shell">
+      <div class="work-head reveal">
+        <div>
+          <span class="section-label">02 / Selected work</span>
+          <h2 class="section-title">Systems,<br>not mockups.</h2>
+        </div>
+        <p class="section-copy">Case studies explain the business problem and architecture. Interactive reconstructions show how the systems behave using synthetic data without exposing client environments.</p>
+      </div>
+
+      <div class="cards" id="projectCards"></div>
+
+      <div class="rnd reveal">
+        <div>
+          <span class="section-label">R&amp;D / Ongoing</span>
+          <h3>DEE Agentic Automation Runtime</h3>
+          <p>A local Python runtime for persistent specialist agents, dependency-aware orchestration, governed actions, approvals, memory, retries, audit trails, provider routing, and tool permissions.</p>
+        </div>
+        <div class="rnd-side">
+          <div class="rnd-row"><span>Runtime</span><b>Persistent specialist agents</b><em>In development</em></div>
+          <div class="rnd-row"><span>Governance</span><b>Approvals + permissioned tools</b><em>Built-in</em></div>
+          <div class="rnd-row"><span>Reliability</span><b>Retry · idempotency · DLQ · audit</b><em>Core</em></div>
+          <div class="rnd-row"><span>Integrations</span><b>Zoho · Monday · MCP · web search</b><em>Expanding</em></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="capabilities" id="capabilities">
+    <div class="shell">
+      <div class="cap-head reveal">
+        <div>
+          <span class="section-label">03 / Capabilities</span>
+          <h2 class="section-title">From process<br>to production.</h2>
+        </div>
+        <p class="section-copy">I choose the implementation layer based on the system: platform-native first, orchestration when systems cross boundaries, and code where visual tooling stops being enough.</p>
+      </div>
+
+      <div class="cap-list">
+        <div class="cap-row reveal"><span class="n">01</span><h3>Systems architecture</h3><p>Process discovery, data models, system boundaries, workflow states, operating rules, and solution design.</p><span class="tag">Business process → system</span></div>
+        <div class="cap-row reveal"><span class="n">02</span><h3>AI automation</h3><p>Structured LLM workflows, AI screening, extraction, classification, agents, model routing, validation, and human review.</p><span class="tag">OpenAI · Anthropic · Gemini</span></div>
+        <div class="cap-row reveal"><span class="n">03</span><h3>Workflow orchestration</h3><p>Cross-system n8n workflows, schedules, APIs, retries, queues, branching, error paths, reconciliation, and monitoring.</p><span class="tag">n8n primary · Make secondary</span></div>
+        <div class="cap-row reveal"><span class="n">04</span><h3>CRM engineering</h3><p>Zoho CRM modules, Blueprints, workflows, Deluge, reports, migrations, recruitment systems, and data governance.</p><span class="tag">Zoho CRM · Recruit · Deluge</span></div>
+        <div class="cap-row reveal"><span class="n">05</span><h3>Integration engineering</h3><p>REST APIs, webhooks, OAuth2, data contracts, idempotent writes, external actions, and reliable write-back.</p><span class="tag">API · Webhooks · OAuth</span></div>
+        <div class="cap-row reveal"><span class="n">06</span><h3>Custom applications</h3><p>Operational portals, dashboards, lightweight apps, secure integration surfaces, and role-aware interfaces.</p><span class="tag">JavaScript · TypeScript · Python</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-section" id="stack">
+    <div class="shell">
+      <div class="stack-panel reveal">
+        <div class="stack-head">
+          <div>
+            <span class="section-label">04 / Working stack</span>
+            <h2 class="section-title">Tools by<br>system layer.</h2>
+          </div>
+          <p class="section-copy">The portfolio is deliberately not a logo wall. Each tool has a clear job in the architecture.</p>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-col"><strong>Orchestration</strong><span>n8n<br>Make<br>Zapier</span></div>
+          <div class="stack-col"><strong>Business systems</strong><span>Zoho CRM<br>Monday.com<br>Google Workspace</span></div>
+          <div class="stack-col"><strong>AI / Agentic</strong><span>OpenAI<br>Anthropic<br>Gemini<br>LangGraph</span></div>
+          <div class="stack-col"><strong>Engineering</strong><span>JavaScript<br>Python<br>TypeScript<br>REST APIs</span></div>
+          <div class="stack-col"><strong>Data / Infra</strong><span>PostgreSQL<br>Supabase<br>Cloudflare<br>Self-hosted n8n</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="shell">
+      <div class="contact-panel reveal">
+        <div class="contact-top">
+          <span class="section-label">05 / Contact</span>
+          <span class="eyebrow">Available for automation &amp; systems roles</span>
+        </div>
+        <h2>Have a messy process? Good.</h2>
+        <div class="contact-bottom">
+          <p>Show me where the data, people, tools, or decisions stop connecting. I’ll map the system and build the layer that makes the operation work.</p>
+          <a class="contact-email" href="mailto:boton.danicamarie@gmail.com">boton.danicamarie@gmail.com <span>↗</span></a>
+        </div>
+      </div>
+      <footer class="footer"><span>DCode · Danica Marie Boton · AI Automation &amp; Systems Engineering</span><span>Built as a working portfolio, not a static gallery.</span></footer>
+    </div>
+  </section>
 </main>
-<footer class="wrap footer">DCode · Danica Marie Boton · Systems Architect · Automation & Integration Engineer</footer>
+
 <script src="data.js?v=migration-corrected-20260905"></script>
 <script src="workspace-ops-project.js?v=20260904-project-order3"></script>
-<script>
-const root=document.getElementById('projectCards');
-DCODE_PROJECTS.filter(p=>!['sheets','ops-dashboard'].includes(p.id)).forEach(p=>{
-  const el=document.createElement('article');el.className='project';el.dataset.id=p.id;
-  const screenId=`preview-${p.id}`;
-  const hasDemo=p.demoAvailable!==false;
-  const hasN8n=p.stack.some(item=>/\bn8n\b/i.test(item));
-  const caseHref=p.id==='workspace-ops'?'workspace-ops-case-study.html':p.id==='monday-project-ops'?'monday-project-ops-case-study.html':p.id==='ocr'?'spx-case-study-v2.html?v=20260905-spx-modern1':p.id==='zoho-migration'?'migration-case-study.html?v=20260905-crashfix2':`case-study.html?id=${p.id}`;
-  const previewHref=p.id==='portal'?'secure-candidate-review.html':p.id==='recruitment'?'demo.html?id=recruitment&embed=1&v=20260908-hide-p01-agent-demo2':p.id==='ocr'?'demo.html?id=ocr&embed=1&v=20260905-spx-modern1':p.id==='zoho-migration'?'migration-demo-control.html?embed=1&v=20260905-crashfix2':p.id==='monday-project-ops'?'monday-project-ops-demo-native-v8.html?embed=1&v=20260908-sidebar-icons1':p.id==='workspace-ops'?'workspace-ops-demo-v2.html?embed=1&v=20260903-workspace-ops2':`demo.html?id=${p.id}&embed=1`;
-  const workflowAction=hasN8n?`<button class="btn" type="button" data-workflow-contact>View n8n workflow</button>`:'';
-  const demoLabel=p.id==='recruitment'?'Open CRM demo ↗':'Open demo ↗';
-  const actions=hasDemo
-    ? `<a class="btn" href="${caseHref}">Read case study</a><button class="btn primary fullscreen-btn" type="button" data-target="${screenId}">${demoLabel}</button>${workflowAction}`
-    : `<a class="btn primary" href="${caseHref}">View ongoing case study</a><span class="demo-pending">Public demo in development</span>`;
-  const visual=hasDemo
-    ? `<div class="laptop-wrap">
-        <div class="laptop-screen" id="${screenId}">
-          <div class="laptop-bezel"><span class="camera-dot"></span><span class="screen-title">${p.title}</span><div class="screen-controls"><button type="button" class="screen-btn fullscreen-btn" data-target="${screenId}" aria-label="View ${p.title} demo fullscreen">⛶</button></div></div>
-          <div class="laptop-display"><iframe class="live-demo-preview" src="${previewHref}" title="Interactive reconstructed ${p.title} preview" loading="lazy" allowfullscreen></iframe></div>
-        </div>
-        <div class="laptop-base"><span></span></div>
-        <div class="demo-caption"><span>Interactive reconstruction</span><i></i><span>Synthetic data</span><i></i><span>Fullscreen available</span></div>
-      </div>`
-    : `<div class="development-preview"><div class="development-top"><span>DEE / ongoing R&amp;D</span><span class="dev-live"><i></i> private build</span></div><div class="development-map" aria-label="DEE development architecture"><svg viewBox="0 0 760 420" aria-hidden="true"><path d="M130 210 C215 210 205 115 300 115"/><path d="M130 210 C215 210 205 305 300 305"/><path d="M430 115 C505 115 495 210 585 210"/><path d="M430 305 C505 305 495 210 585 210"/><path d="M690 210 C720 210 716 130 740 130"/><path d="M690 210 C720 210 716 300 740 300"/></svg><article style="left:26px;top:170px"><small>ENTRY</small><b>User / Trigger</b></article><article style="left:255px;top:70px"><small>ROUTING</small><b>Orchestrator</b></article><article style="left:255px;top:260px"><small>SPECIALISTS</small><b>Persistent Agents</b></article><article class="accent" style="left:470px;top:170px"><small>GOVERNANCE</small><b>Approval + Permissions</b></article><article style="right:14px;top:70px;width:120px"><small>EXECUTION</small><b>Named Actions</b></article><article style="right:14px;top:260px;width:120px"><small>STATE</small><b>Memory + Audit</b></article></div><div class="development-note"><b>Public demo intentionally withheld</b><span>The case study documents architecture, governance, implementation progress, and validated test evidence while the runtime is still under active development.</span></div></div>`;
-  el.innerHTML=`<div class="projectcopy"><div class="projecttop"><span class="num">${p.order} / ${p.category}</span><span class="status">${p.status}</span></div>${p.period?`<div class="project-period">${p.period}</div>`:''}<h3>${p.title}</h3><p>${p.subtitle}</p><div class="chips">${p.stack.slice(0,5).map(x=>`<span class="chip">${x}</span>`).join('')}</div><div class="metricline">${p.metrics.slice(0,2).map(m=>`<div class="mini"><strong>${m[0]}</strong><span>${m[1]}</span></div>`).join('')}</div><div class="projectactions">${actions}</div></div><div class="projectvisual">${visual}</div>`;
-  root.appendChild(el)
-});
-
-const PREVIEW_W=1600, PREVIEW_H=900;
-function fitPreview(iframe){
-  const display=iframe.closest('.laptop-display');
-  if(!display) return;
-  const apply=()=>{
-    const screen=iframe.closest('.laptop-screen');
-    if(document.fullscreenElement===screen){iframe.style.cssText='';return;}
-    const scale=Math.min(display.clientWidth/PREVIEW_W,display.clientHeight/PREVIEW_H);
-    const scaledWidth=PREVIEW_W*scale;
-    const scaledHeight=PREVIEW_H*scale;
-    iframe.style.width=`${PREVIEW_W}px`;
-    iframe.style.height=`${PREVIEW_H}px`;
-    iframe.style.transform=`scale(${scale})`;
-    iframe.style.left=`${Math.max(0,(display.clientWidth-scaledWidth)/2)}px`;
-    iframe.style.top=`${Math.max(0,(display.clientHeight-scaledHeight)/2)}px`;
-  };
-  new ResizeObserver(apply).observe(display);
-  iframe.addEventListener('load',apply);
-  iframe._fitPreview=apply;
-  apply();
-}
-document.querySelectorAll('.live-demo-preview').forEach(fitPreview);
-
-document.addEventListener('fullscreenchange',()=>{
-  document.querySelectorAll('.live-demo-preview').forEach(iframe=>iframe._fitPreview&&iframe._fitPreview());
-});
-
-document.addEventListener('click', async (event)=>{
-  const btn=event.target.closest('.fullscreen-btn');
-  if(!btn) return;
-  const target=document.getElementById(btn.dataset.target);
-  if(!target) return;
-  try{
-    if(document.fullscreenElement) await document.exitFullscreen();
-    else await target.requestFullscreen();
-  }catch(err){ target.scrollIntoView({behavior:'smooth',block:'center'}); }
-});
-</script>
+<script src="portfolio-framer.js?v=20261006"></script>
 <script src="contact-workflow.js?v=20260908-home-cleanup1"></script>
 <script src="migration-layout-refresh.js?v=20260905-crashfix2"></script>
-</body></html>
+</body>
+</html>
